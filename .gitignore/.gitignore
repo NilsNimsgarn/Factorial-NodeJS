@@ -1,0 +1,21 @@
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+var stdin_input = "";
+
+process.stdin.on("data", function (input) {
+    stdin_input += input;                               // Reading input from STDIN
+});
+
+process.stdin.on("end", function () {
+   main(stdin_input);
+});
+
+function main(input) {
+    var z=Number(input);
+    var erg=1;
+    for(var x=0;x<z;x++)
+    {
+        erg=erg+x*erg;
+    }
+    console.log(erg);    
+}
